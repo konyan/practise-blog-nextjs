@@ -1,7 +1,25 @@
 import Link from 'next/link';
+import Head from 'next/head';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+
+
+Router.onRouteChangeStart = url => {
+  console.log("url", url);
+  NProgress.start();
+}
+
+
+Router.onRouteChangeComplete = () => NProgress.done();
+
+Router.onRouteChangeError = () => NProgress.done();
 
 export default ({ children, title }) => (
   <div className="root">
+    <Head>
+      <title>My Portfolio | {title}</title>
+
+    </Head>
     <header>
       <Link href="/">
         <a>Home</a>
@@ -58,7 +76,7 @@ export default ({ children, title }) => (
         body{
           margin:0;
           padding:0;
-          font-size: 110%
+          font-size: 110%;
           background-color: #f0f0f0;
         }
       `
