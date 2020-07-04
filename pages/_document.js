@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="description" content="practice nextjs portfolio page" />
-          <meta charset="utf-8"></meta>
+          <meta charSet="utf-8"></meta>
           <meta name="robots" content="noindex, nofollow" />
           <meta name="viewport" content="width=device-width" />
 
